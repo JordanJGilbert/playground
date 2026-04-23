@@ -62,13 +62,13 @@
   window.addEventListener('resize', resize);
   window.addEventListener('orientationchange', resize);
 
-  // --- Game constants (tuned to feel close to original) ---
-  const GRAVITY = 0.38;
-  const FLAP = -6.8;
-  const MAX_FALL = 10;
-  const PIPE_SPEED = 1.8;
-  const PIPE_SPACING = 150;       // horizontal distance between pipes
-  const PIPE_GAP = 105;           // vertical gap
+  // --- Game constants (easy mode for Lao Lao) ---
+  const GRAVITY = 0.22;
+  const FLAP = -5.2;
+  const MAX_FALL = 7;
+  const PIPE_SPEED = 1.1;
+  const PIPE_SPACING = 200;       // horizontal distance between pipes
+  const PIPE_GAP = 170;           // vertical gap
   const PIPE_WIDTH = 52;
   const GROUND_HEIGHT = 112;
   const BIRD_X = 70;
@@ -134,8 +134,8 @@
 
   // --- Collision ---
   function hitsPipe(b, p) {
-    const bx = b.x + 3, by = b.y + 3;
-    const bw = BIRD_W - 6, bh = BIRD_H - 6;
+    const bx = b.x + 8, by = b.y + 7;
+    const bw = BIRD_W - 16, bh = BIRD_H - 14;
     if (bx + bw < p.x || bx > p.x + PIPE_WIDTH) return false;
     if (by < p.top) return true;
     if (by + bh > p.top + PIPE_GAP) return true;
