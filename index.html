@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Notes</title>
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/icon-192.png" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Notes" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Notes</h1>
+    <button id="new-note" aria-label="New note">+</button>
+  </header>
+  <main>
+    <ul id="notes"></ul>
+    <p id="empty" hidden>No notes yet. Tap + to add one.</p>
+  </main>
+  <dialog id="editor">
+    <form method="dialog">
+      <textarea id="note-text" placeholder="Write a note…" rows="8" autofocus></textarea>
+      <menu>
+        <button value="cancel">Cancel</button>
+        <button id="save" value="save">Save</button>
+      </menu>
+    </form>
+  </dialog>
+  <script src="/app.js"></script>
+</body>
+</html>
